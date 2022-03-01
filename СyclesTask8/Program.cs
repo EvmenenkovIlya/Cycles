@@ -1,19 +1,19 @@
 ﻿// Пользователь вводит целое положительное число, которое является кубом целого числа N.
 // Найдите число N методом половинного деления.
 int N = Convert.ToInt32(Console.ReadLine());
-int a = 0;
-int b = N;
+int leftBorder = 0;
+int rightBorder = N;
 int tmp = 0;
-while (a * a * a != N && b * b * b != N)
+while (tmp * tmp * tmp != N)
 {
-    tmp = (a + b) / 2;
+    tmp = (leftBorder + rightBorder) / 2;
     if (tmp * tmp * tmp > N)
     {
-        b = tmp;
+        rightBorder = tmp;
     }
     else
     {
-        a = tmp;
+        leftBorder = tmp;
     }
 }
 Console.WriteLine(tmp);
